@@ -1,0 +1,78 @@
+:root {
+    --lado: 75vh;
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #888;
+}
+.reloj {
+    --horaAng: 0deg;
+    --minutoAng: 90deg;
+    --segundoAng: 180deg;
+    width: var(--lado);
+    height: var(--lado);
+    margin: 2rem auto 0;
+    border: 30px solid peru;
+    border-radius: 50%;
+    position: relative;
+}
+@mixin cent-ver {
+    top: 50%;
+    transform: translateY(-50%);
+}
+@mixin cent-hor {
+    left: 50%;
+    transform: translateX(-50%);
+}
+@mixin cent-total {
+    @include cent-hor;
+    @include cent-ver;
+}
+.marcador {
+    position: absolute;
+    left: 50%;
+    width: 50%;
+    height: 5%;
+    @include cent-ver;
+    transform-origin: left center;
+
+    &::after {
+        position: absolute;
+        content: '';
+        background-color: #222;
+        margin: 0 auto;
+        @include cent-hor;
+    }
+}
+.hora {
+    transform: rotate(var(--horaAng));
+
+    &::after {
+        height: 100%;
+        width: 50%;
+    }
+}
+.minuto {
+    transform: rotate(var(--minutoAng));
+
+    &::after {
+        height: 100%;
+        width: 85%;
+    }
+}
+.segundo {
+    transform: rotate(var(--segundoAng));
+    display: flex;
+    align-items: center;
+
+    &::after {
+        height: 50%;
+        width: 90%;
+    }
+}

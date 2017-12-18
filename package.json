@@ -1,0 +1,17 @@
+{
+  "name": "reloj-html5",
+  "version": "0.0.1",
+  "description": "A HTML5 analogic clock",
+  "author": "Miguel Gil Rosas <miguelgilrosas@gmail.com>",
+  "devDependencies": {
+    "autoprefixer": "^6.0.3",
+    "browserify": "^11.2.0",
+    "gulp": "^3.9.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-postcss": "^6.0.1",
+    "gulp-sass": "^3.1.0",
+    "tsify": "^3.0.3",
+    "typescript": "^2.5.3"
+  }
+}
